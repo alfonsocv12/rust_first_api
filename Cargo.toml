@@ -1,5 +1,5 @@
 [package]
-name = "rust-api"
+name = "alfonsocv12 blog"
 version = "0.1.0"
 authors = ["alfonsocv12 <alfonsocvu@gmail.com>"]
 edition = "2018"
@@ -7,4 +7,23 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+#Server
 rocket = "0.4.5"
+
+#database
+diesel = { version = "0.16", features = ["postgres"] }
+
+# The following four dependencies will be touched upon
+# at later times in this blog series
+serde = "1.0.11"
+serde_derive = "1.0.11"
+serde_json = "1.0.2"
+tera = "0.10"
+
+# r2d2 is related to database connection pools
+# this will be reviewed in a future post
+r2d2 = "*"
+r2d2-diesel = "*"
+
+# SYS
+dotenv = "0.10"
