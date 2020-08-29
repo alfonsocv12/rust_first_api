@@ -7,15 +7,14 @@ extern crate tera;
 
 // Bring both Template and Context into scope
 use rocket_contrib::templates::Template;
-use tera::Context;
+use std::collections::HashMap;
 
 #[get("/")]
 fn index() -> Template {
-    let mut context = Context::new();
-    // let context = context();
-
+    let mut context = HashMap::new();
     context.insert("my_message", &"Heya from template context!");
-    Template::render("layout", &context)
+
+    Template::render("layout", context)
 }
 
 fn main() {
